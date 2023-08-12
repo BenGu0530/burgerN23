@@ -1,0 +1,18 @@
+import numpy as np
+from PIL import Image
+
+for i in range(10):
+  # Option 1 ---> just saves first frame
+  frame = np.full((100,100),255, dtype=np.uint8)
+  # Option 2 ---> saves whole gif
+  frame = np.random.randint(0, 255, (100, 100), dtype=np.uint8) 
+
+  ##  code to add stuff to frame
+
+  if i == 0:
+    frames = np.expand_dims(frame, axis=0)
+  else:
+    frames = np.concatenate((frames, np.expand_dims(frame, axis=0)), axis=0)
+
+images = [Image.fromarray(frame) for frame in frames]
+images[0].save('output.gif', save_all=True, append_images=images[1:], duration=50, loop=0)

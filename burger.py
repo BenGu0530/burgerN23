@@ -17,6 +17,8 @@ def solve_1d_burger(epsilon, length, n_x, dt, num_steps, expression_str=None, gl
     u_init = Expression(expression_str, degree=2)
     u_n = interpolate(u_init, V)
 
+    # bc = DirichletBC(Vh, g, GammaD)
+
     # Define test and trial functions
     u = TrialFunction(V)
     v = TestFunction(V)
@@ -50,7 +52,7 @@ def solve_1d_burger(epsilon, length, n_x, dt, num_steps, expression_str=None, gl
         return line,
 
     ani = animation.FuncAnimation(fig, update, frames=num_steps, fargs=(u_n, u, u_, t, dt),
-                                interval=100, blit=True)
+                                interval=100, blit=False)
     plt.close()
     ani.save('./burger/vanishing_viscosity_{}.gif'.format(global_solution_idx), writer='pillow', fps=15)
     os.remove('./burger/vanishing_viscosity_{}.gif'.format(global_solution_idx))
@@ -163,7 +165,7 @@ def gen_random_expression_str_2d():
 
 if __name__ == '__main__':
     # Parameters
-    epsilon = 0.01
+    epsilon = 0.1
     length = 3.0
     n_x = 100
     dt = 0.1

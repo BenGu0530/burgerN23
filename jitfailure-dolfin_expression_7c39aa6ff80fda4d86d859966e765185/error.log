@@ -1,0 +1,4 @@
+/tmp/tmpoeorjykv/dolfin_expression_7c39aa6ff80fda4d86d859966e765185.cpp: In member function 'virtual void dolfin::dolfin_expression_7c39aa6ff80fda4d86d859966e765185::eval(Eigen::Ref<Eigen::Matrix<double, -1, 1> >, Eigen::Ref<const Eigen::Matrix<double, -1, 1> >) const':
+/tmp/tmpoeorjykv/dolfin_expression_7c39aa6ff80fda4d86d859966e765185.cpp:61:21: error: expected ';' before '=' token
+   61 |           values[0] = ...;
+      |                     ^

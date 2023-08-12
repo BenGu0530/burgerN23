@@ -1,0 +1,7 @@
+/tmp/tmpibcw6jjo/dolfin_expression_819a75248b23e495b82cb8310a319dd3.cpp: In member function 'virtual void dolfin::dolfin_expression_819a75248b23e495b82cb8310a319dd3::eval(Eigen::Ref<Eigen::Matrix<double, -1, 1> >, Eigen::Ref<const Eigen::Matrix<double, -1, 1> >) const':
+/tmp/tmpibcw6jjo/dolfin_expression_819a75248b23e495b82cb8310a319dd3.cpp:61:47: error: expected ')' before ';' token
+   61 |           values[0] = exp (-2*pow(x[0] - 1, 2);
+      |                                               ^
+/tmp/tmpibcw6jjo/dolfin_expression_819a75248b23e495b82cb8310a319dd3.cpp:61:27: note: to match this '('
+   61 |           values[0] = exp (-2*pow(x[0] - 1, 2);
+      |                           ^
